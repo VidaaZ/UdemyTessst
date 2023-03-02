@@ -1,0 +1,40 @@
+﻿@page
+@model UdemyWeb.Pages.Admin.Categories.CreateModel
+
+<form method="post">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary pl-3">Create Category</h2>
+			<hr />
+		</div>
+		<div asp-validation-summary="All"></div>
+		<div class="mb-3">
+			
+			
+			
+			<label asp-for="Category.Name"></label>
+			<input asp-for="Category.Name" class="form-control" />
+			<span asp-validation-for="Category.Name" class="text-danger"></span>
+		
+		</div>
+		<div class="mb-3">
+		
+			
+			
+			<label asp-for="Category.DisplayOrder"></label>
+			<input asp-for="Category.DisplayOrder" class="form-control" />
+			</div>
+			<span asp-validation-for="Category.DisplayOrder" class="text-danger"></span>
+		
+		<button type="submit" class="btn btn-primary" style="width:150px;">Create</button>
+		<a asp-page="Index" class="btn btn-secondary" style="width:150px;"> Back to List</a>
+
+	</div>
+
+</form>
+@section Scripts {
+	@*all the javascript code will be added in this block*@
+	@{ /*all the validation wiill be done in clienside not load the url*/
+		<partial name="_ValidationScriptsPartial"/> //if partialview did not just have a script,it had some code,then you code add whithin your html
+   }
+}
